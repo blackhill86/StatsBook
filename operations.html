@@ -149,25 +149,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Statistics, psychology, and other stories</a> 
-        <div class="sidebar-tools-main tools-wide">
-    <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
-    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
+        <div class="sidebar-tools-main">
+    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./Statistics,-psychology,-and-other-stories.pdf">
-            <i class="bi bi-bi-file-pdf pe-1"></i>
-          Download PDF
-          </a>
-        </li>
-        <li>
-          <a class="dropdown-item sidebar-tools-main-item" href="./Statistics,-psychology,-and-other-stories.epub">
-            <i class="bi bi-bi-journal pe-1"></i>
-          Download ePub
-          </a>
-        </li>
-    </ul>
-    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
-    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
         <li>
           <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
@@ -204,7 +188,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./BasicsR.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Let’s do our first ride in <code>R</code></span></a>
+  <a href="./BasicsR.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Let’s take our first ride in <code>R</code></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -215,6 +199,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./functionsPack.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions and <code>R</code> packages</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./importData.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The most important question: how do I import data?</span></a>
   </div>
 </li>
     </ul>
@@ -234,8 +223,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
   </ul></li>
   <li><a href="#division" id="toc-division" class="nav-link" data-scroll-target="#division"><span class="toc-section-number">4.2</span>  Division</a></li>
   <li><a href="#other-important-math-operations" id="toc-other-important-math-operations" class="nav-link" data-scroll-target="#other-important-math-operations"><span class="toc-section-number">4.3</span>  Other important math operations</a></li>
+  <li><a href="#excercises" id="toc-excercises" class="nav-link" data-scroll-target="#excercises"><span class="toc-section-number">4.4</span>  Excercises</a></li>
   </ul>
-<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/main/operations.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -362,6 +352,29 @@ length</code></pre>
 <h2 data-number="4.3" class="anchored" data-anchor-id="other-important-math-operations"><span class="header-section-number">4.3</span> Other important math operations</h2>
 <p><code>R</code> can work as a sophisticated calculator, it has all the mathematical functions that you can imagine and more.</p>
 <p>You may check more mathematical function by <a href="https://www.statmethods.net/management/operators.html" target="_blank">CLICKING HERE</a></p>
+</section>
+<section id="excercises" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="excercises"><span class="header-section-number">4.4</span> Excercises</h2>
+<ol type="1">
+<li>Explain what is the following code computing, you may check online or use the link provided in the last section.</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>((<span class="dv">4</span><span class="sc">^</span><span class="dv">2</span>)<span class="sc">*</span><span class="fu">sqrt</span>(<span class="dv">56</span>))<span class="sc">/</span><span class="dv">100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.19733</code></pre>
+</div>
+</div>
+<ol start="2" type="1">
+<li><code>length()</code> is a function often use in <code>R</code> to calculated how many elements are in a vector. Can you tell what statistical estimate I’m calculating here?</li>
+</ol>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">50</span>,<span class="dv">20</span>,<span class="dv">40</span>,<span class="dv">23</span>,<span class="dv">74</span>)</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(age)<span class="sc">/</span><span class="fu">length</span>(age)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 41.4</code></pre>
+</div>
+</div>
 
 
 </section>
@@ -618,7 +631,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./BasicsR.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Let’s do our first ride in <code>R</code></span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Let’s take our first ride in <code>R</code></span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
