@@ -109,34 +109,13 @@
     "href": "functionsPack.html#references",
     "title": "5  Functions and R packages",
     "section": "References",
-    "text": "References\n\n\n\n\nBache, S. M., & Wickham, H. (2022). Magrittr: A forward-pipe operator for r. https://CRAN.R-project.org/package=magrittr\n\n\nHorst, A. M., Hill, A. P., & Gorman, K. B. (2020). Palmerpenguins: Palmer archipelago (antarctica) penguin data. https://doi.org/10.5281/zenodo.3960218\n\n\nWickham, H., François, R., Henry, L., & Müller, K. (2022). Dplyr: A grammar of data manipulation. https://CRAN.R-project.org/package=dplyr"
+    "text": "References\n\n\n\n\nHorst, A. M., Hill, A. P., & Gorman, K. B. (2020). Palmerpenguins: Palmer archipelago (antarctica) penguin data. https://doi.org/10.5281/zenodo.3960218"
   },
   {
     "objectID": "functionsPack.html#questions",
     "href": "functionsPack.html#questions",
     "title": "5  Functions and R packages",
-    "section": "5.5 Questions",
-    "text": "5.5 Questions\n\nR contains data sets available for practicing. You can see the list of data sets by running data(). Run the data() function, after that select one data set, then run the function summary(). What did you see after running summary()?\n\n\n### Example: I'm running summary() with the data set named 'mtcars'. Select\n### another data set from data()\ndata()\nsummary(mtcars)"
-  },
-  {
-    "objectID": "functionsPack.html#pipes-in-r",
-    "href": "functionsPack.html#pipes-in-r",
-    "title": "5  Functions and R packages",
-    "section": "5.3 Pipes in R",
-    "text": "5.3 Pipes in R\nYes, you are right. We will use pipes in R. A pipe is a connection between the Left Hand Statement (LHS) with the Right Hand Statement (RHS). You already know that you can write several lines of code in an R script. However, pipes will help to join together several statements at the same time. Each statement is a action performed on an object.\n\n\n Taken from Isabella Velazquez\nTake a look at the following code:\n\nlibrary(palmerpenguins)\n\npenguins |> \n  with(mean(bill_length_mm, na.rm = TRUE ))\n\n[1] 43.92193\n\n\nIn the above code, you’ll see the sign |>. This is the pipe operator in R, you may also notice that we don’t make a reference to the data set penguins in the next line where the estimation of the mean happens. R understands that the object where the operation takes place is penguins because of the pipe.\nThe next code shows how we would estimate the mean wihout using a pipe:\n\nmean(penguins$bill_length_mm, na.rm = TRUE)\n\n[1] 43.92193\n\n\nYou might be thinking: Come on! That was easier! I don’t need pipes. Well, in this case the pipe does not look very useful. But let’s make the example more complicated. Let’s create a plot:\n\nlibrary(palmerpenguins) ## I'm loading the package \"palmerpenguins\". You should install\n                        ## the package \"palmerpenguins\" before loading the package.\n\nplot(penguins$bill_length_mm, penguins$body_mass_g)\n\n\n\n\nNow, let’s create the same plot using a pipe:\n\npenguins |> \n  with(plot(bill_length_mm, body_mass_g))\n\n\n\n\nThe last example includes a pipe, and it looks easier to understand compare to the code in the first plot.\n\n5.3.1 Piping can be done differently\nR offers another option to create pipes. The package dplyr (Wickham et al., 2022) is popular for implementing the magrittr's pipe (Bache & Wickham, 2022). This pipe is represented by using the function %>%.\n\nlibrary(dplyr) ### run install.packages(\"dplyr\") to install the package.\n\npenguins %>%\n  na.omit() %>%\n  group_by(sex) %>%\n  summarise(Mean = round(mean(body_mass_g),2), ### body_mass_g is the penguin's weight in grams\n            SD = round(sd(body_mass_g),2))\n\n# A tibble: 2 × 3\n  sex     Mean    SD\n  <fct>  <dbl> <dbl>\n1 female 3862.  666.\n2 male   4546.  788."
-  },
-  {
-    "objectID": "functionsPack.html#piping-can-be-done-differently",
-    "href": "functionsPack.html#piping-can-be-done-differently",
-    "title": "5  Functions and R packages",
-    "section": "5.4 Piping can be done differently",
-    "text": "5.4 Piping can be done differently\nR offers another option to create pipes. The package dplyr (Wickham et al., 2022) is popular for implementing the magrittr's pipe (Bache & Wickham, 2022). This pipe is represented by using the function %>%.\n\nlibrary(dplyr) ### run install.packages(\"dplyr\") to install the package.\n\npenguins %>%\n  na.omit() %>%\n  group_by(sex) %>%\n  summarise(Mean = round(mean(body_mass_g),2), ### body_mass_g is the penguin's weight in grams\n            SD = round(sd(body_mass_g),2))\n\n# A tibble: 2 × 3\n  sex     Mean    SD\n  <fct>  <dbl> <dbl>\n1 female 3862.  666.\n2 male   4546.  788."
-  },
-  {
-    "objectID": "functionsPack.html",
-    "href": "functionsPack.html",
-    "title": "5  Functions and R packages",
-    "section": "",
-    "text": "6 Questions"
+    "section": "5.3 Questions",
+    "text": "5.3 Questions\n\nR contains data sets available for practicing. You can see the list of data sets by running data(). Run the data() function, after that select one data set, then run the function summary(). What did you see after running summary()?\n\n\n### Example: I'm running summary() with the data set named 'mtcars'. Select\n### another data set from data()\ndata()\nsummary(mtcars)"
   }
 ]

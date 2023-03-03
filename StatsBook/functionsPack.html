@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -148,7 +148,7 @@ div.csl-indent {
 
 </head>
 
-<body class="nav-sidebar floating slimcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -239,19 +239,13 @@ div.csl-indent {
   <ul class="collapse">
   <li><a href="#packages-are-like-books-in-your-shelf." id="toc-packages-are-like-books-in-your-shelf." class="nav-link" data-scroll-target="#packages-are-like-books-in-your-shelf."><span class="toc-section-number">5.2.1</span>  Packages are like books in your shelf.</a></li>
   </ul></li>
-  <li><a href="#pipes-in-r" id="toc-pipes-in-r" class="nav-link" data-scroll-target="#pipes-in-r"><span class="toc-section-number">5.3</span>  Pipes in <code>R</code></a>
-  <ul class="collapse">
-  <li><a href="#piping-can-be-done-differently" id="toc-piping-can-be-done-differently" class="nav-link" data-scroll-target="#piping-can-be-done-differently"><span class="toc-section-number">5.3.1</span>  Piping can be done differently</a></li>
-  </ul></li>
-  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="toc-section-number">6</span>  Questions</a>
-  <ul class="collapse">
+  <li><a href="#questions" id="toc-questions" class="nav-link" data-scroll-target="#questions"><span class="toc-section-number">5.3</span>  Questions</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -388,97 +382,27 @@ Tip
 </div>
 </section>
 </section>
-<section id="pipes-in-r" class="level2 page-columns page-full" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="pipes-in-r"><span class="header-section-number">5.3</span> Pipes in <code>R</code></h2>
-<p>Yes, you are right. We will use pipes in <code>R</code>. A pipe is a connection between the Left Hand Statement (LHS) with the Right Hand Statement (RHS). You already know that you can write several lines of code in an <code>R</code> script. However, pipes will help to join together several statements at the same time. Each statement is a action performed on an object.</p>
-
-<div class="no-row-height column-margin column-container"><div class="">
-<p><img src="mario.gif" class="img-fluid" alt="An animated image of Mario's video game"> Taken from <a href="https://ivelasq.rbind.io/blog/understanding-the-r-pipe/">Isabella Velazquez</a></p>
-</div></div><p>Take a look at the following code:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">mean</span>(bill_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span> ))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 43.92193</code></pre>
-</div>
-</div>
-<p>In the above code, you’ll see the sign <code>|&gt;</code>. This is the pipe operator in <code>R</code>, you may also notice that we don’t make a reference to the data set <code>penguins</code> in the next line where the estimation of the mean happens. <code>R</code> understands that the object where the operation takes place is <code>penguins</code> because of the pipe.</p>
-<p>The next code shows how we would estimate the mean wihout using a pipe:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(penguins<span class="sc">$</span>bill_length_mm, <span class="at">na.rm =</span> <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 43.92193</code></pre>
-</div>
-</div>
-<p>You might be thinking: Come on! That was easier! I don’t need pipes. Well, in this case the pipe does not look very useful. But let’s make the example more complicated. Let’s create a plot:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(palmerpenguins) <span class="do">## I'm loading the package "palmerpenguins". You should install</span></span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>                        <span class="do">## the package "palmerpenguins" before loading the package.</span></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(penguins<span class="sc">$</span>bill_length_mm, penguins<span class="sc">$</span>body_mass_g)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="functionsPack_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>Now, let’s create the same plot using a pipe:</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">|&gt;</span> </span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">with</span>(<span class="fu">plot</span>(bill_length_mm, body_mass_g))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<p><img src="functionsPack_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="672"></p>
-</div>
-</div>
-<p>The last example includes a pipe, and it looks easier to understand compare to the code in the first plot.</p>
-<section id="piping-can-be-done-differently" class="level3" data-number="5.3.1">
-<h3 data-number="5.3.1" class="anchored" data-anchor-id="piping-can-be-done-differently"><span class="header-section-number">5.3.1</span> Piping can be done differently</h3>
-<p><code>R</code> offers another option to create pipes. The package <code>dplyr</code> <span class="citation" data-cites="dplyr">(<a href="#ref-dplyr" role="doc-biblioref">Wickham et al., 2022</a>)</span> is popular for implementing the <code>magrittr's</code> pipe <span class="citation" data-cites="magrittr">(<a href="#ref-magrittr" role="doc-biblioref">Bache &amp; Wickham, 2022</a>)</span>. This pipe is represented by using the function <code>%&gt;%</code>.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr) <span class="do">### run install.packages("dplyr") to install the package.</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>penguins <span class="sc">%&gt;%</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">na.omit</span>() <span class="sc">%&gt;%</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(sex) <span class="sc">%&gt;%</span></span>
-<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">Mean =</span> <span class="fu">round</span>(<span class="fu">mean</span>(body_mass_g),<span class="dv">2</span>), <span class="do">### body_mass_g is the penguin's weight in grams</span></span>
-<span id="cb19-7"><a href="#cb19-7" aria-hidden="true" tabindex="-1"></a>            <span class="at">SD =</span> <span class="fu">round</span>(<span class="fu">sd</span>(body_mass_g),<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 2 × 3
-  sex     Mean    SD
-  &lt;fct&gt;  &lt;dbl&gt; &lt;dbl&gt;
-1 female 3862.  666.
-2 male   4546.  788.</code></pre>
-</div>
-</div>
-</section>
-</section>
-<section id="questions" class="level1" data-number="6">
-<h1 data-number="6"><span class="header-section-number">6</span> Questions</h1>
+<section id="questions" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="questions"><span class="header-section-number">5.3</span> Questions</h2>
 <ol type="1">
 <li><code>R</code> contains data sets available for practicing. You can see the list of data sets by running <code>data()</code>. Run the <code>data()</code> function, after that select one data set, then run the function <code>summary()</code>. What did you see after running <code>summary()</code>?</li>
 </ol>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Example: I'm running summary() with the data set named 'mtcars'. Select</span></span>
-<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="do">### another data set from data()</span></span>
-<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>()</span>
-<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="do">### Example: I'm running summary() with the data set named 'mtcars'. Select</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="do">### another data set from data()</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">data</span>()</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(mtcars)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+</section>
 <section id="references" class="level2 unnumbered">
 <h2 class="unnumbered anchored" data-anchor-id="references">References</h2>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-line-spacing="2" role="doc-bibliography">
-<div id="ref-magrittr" class="csl-entry" role="doc-biblioentry">
-Bache, S. M., &amp; Wickham, H. (2022). <em>Magrittr: A forward-pipe operator for r</em>. <a href="https://CRAN.R-project.org/package=magrittr">https://CRAN.R-project.org/package=magrittr</a>
-</div>
 <div id="ref-penguin" class="csl-entry" role="doc-biblioentry">
 Horst, A. M., Hill, A. P., &amp; Gorman, K. B. (2020). <em>Palmerpenguins: Palmer archipelago (antarctica) penguin data</em>. <a href="https://doi.org/10.5281/zenodo.3960218">https://doi.org/10.5281/zenodo.3960218</a>
 </div>
-<div id="ref-dplyr" class="csl-entry" role="doc-biblioentry">
-Wickham, H., François, R., Henry, L., &amp; Müller, K. (2022). <em>Dplyr: A grammar of data manipulation</em>. <a href="https://CRAN.R-project.org/package=dplyr">https://CRAN.R-project.org/package=dplyr</a>
 </div>
-</div>
-</section>
 </section>
 
 </main> <!-- /main -->

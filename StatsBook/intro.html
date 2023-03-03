@@ -2,14 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.2.313">
+<meta name="generator" content="quarto-1.2.269">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Esteban Montenegro, PhD.">
-<meta name="dcterms.date" content="2023-02-25">
 
-<title>Statistics, psychology, and other stories</title>
+<title>Statistics, psychology, and other stories - 2&nbsp; Installing R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./BasicsR.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -73,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Statistics, psychology, and other stories</h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -87,9 +86,25 @@ ul.task-list li input[type="checkbox"] {
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Statistics, psychology, and other stories</a> 
-        <div class="sidebar-tools-main">
-    <a href="" title="Share" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://github.com/jjallaire/hopr/" title="Source Code" class="sidebar-tool px-1"><i class="bi bi-github"></i></a>
+    <a href="" title="Download" id="sidebar-tool-dropdown-0" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-download"></i></a>
     <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-0">
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Statistics,-psychology,-and-other-stories.pdf">
+            <i class="bi bi-bi-file-pdf pe-1"></i>
+          Download PDF
+          </a>
+        </li>
+        <li>
+          <a class="dropdown-item sidebar-tools-main-item" href="./Statistics,-psychology,-and-other-stories.epub">
+            <i class="bi bi-bi-journal pe-1"></i>
+          Download ePub
+          </a>
+        </li>
+    </ul>
+    <a href="" title="Share" id="sidebar-tool-dropdown-1" class="sidebar-tool dropdown-toggle px-1" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi bi-share"></i></a>
+    <ul class="dropdown-menu" aria-labelledby="sidebar-tool-dropdown-1">
         <li>
           <a class="dropdown-item sidebar-tools-main-item" href="https://twitter.com/intent/tweet?url=|url|">
             <i class="bi bi-bi-twitter pe-1"></i>
@@ -116,32 +131,22 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./BasicsR.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Let’s take our first ride in <code>R</code></span></a>
+  <a href="./BasicsR.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Let’s do our first ride in <code>R</code></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./operations.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">👩‍💻Operations and object manipulation</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./functionsPack.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Functions and <code>R</code> packages</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./importData.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">The most important question: how do I import data?</span></a>
+  <a href="./references.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">References</span></a>
   </div>
 </li>
     </ul>
@@ -153,39 +158,34 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface"><span class="toc-section-number">1</span>  Preface</a>
+  <li><a href="#r-installation" id="toc-r-installation" class="nav-link active" data-scroll-target="#r-installation"><span class="toc-section-number">2.1</span>  R installation</a>
   <ul class="collapse">
-  <li><a href="#welcome-to-my-lab-book" id="toc-welcome-to-my-lab-book" class="nav-link" data-scroll-target="#welcome-to-my-lab-book"><span class="toc-section-number">1.1</span>  Welcome to my lab book!</a></li>
-  <li><a href="#how-to-use-this-book" id="toc-how-to-use-this-book" class="nav-link" data-scroll-target="#how-to-use-this-book"><span class="toc-section-number">1.2</span>  How to use this book?</a></li>
+  <li><a href="#step-1" id="toc-step-1" class="nav-link" data-scroll-target="#step-1"><span class="toc-section-number">2.1.1</span>  Step 1</a></li>
+  <li><a href="#step-2" id="toc-step-2" class="nav-link" data-scroll-target="#step-2"><span class="toc-section-number">2.1.2</span>  Step 2</a></li>
+  <li><a href="#step-3" id="toc-step-3" class="nav-link" data-scroll-target="#step-3"><span class="toc-section-number">2.1.3</span>  Step 3</a></li>
+  <li><a href="#step-3-1" id="toc-step-3-1" class="nav-link" data-scroll-target="#step-3-1"><span class="toc-section-number">2.1.4</span>  Step 3</a></li>
   </ul></li>
+  <li><a href="#rstudio-installation" id="toc-rstudio-installation" class="nav-link" data-scroll-target="#rstudio-installation"><span class="toc-section-number">2.2</span>  RStudio installation</a>
+  <ul class="collapse">
+  <li><a href="#step-1-1" id="toc-step-1-1" class="nav-link" data-scroll-target="#step-1-1"><span class="toc-section-number">2.2.1</span>  Step 1</a></li>
+  </ul></li>
+  <li><a href="#step-2-1" id="toc-step-2-1" class="nav-link" data-scroll-target="#step-2-1"><span class="toc-section-number">2.3</span>  Step 2</a></li>
   </ul>
-</nav>
+<div class="toc-actions"><div><i class="bi bi-github"></i></div><div class="action-links"><p><a href="https://github.com/jjallaire/hopr/edit/main/intro.qmd" class="toc-action">Edit this page</a></p></div></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Statistics, psychology, and other stories</h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Esteban Montenegro, PhD. </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">February 25, 2023</p>
-    </div>
-  </div>
   
     
   </div>
@@ -193,20 +193,72 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="preface" class="level1" data-number="1">
-<h1 data-number="1"><span class="header-section-number">1</span> Preface</h1>
-<section id="welcome-to-my-lab-book" class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="welcome-to-my-lab-book"><span class="header-section-number">1.1</span> Welcome to my lab book!</h2>
-<p>I’m excited to share <code>R</code> exercises, and cutting edge strategies to analyze data sets based on interesting hypothesis. This book is oriented to teach basics in <code>R</code> language for undergraduate students at <em>California State University, Stanislaus</em>. It is likely that the content and exercises will change every semester. This is a book in constant progress, and the changes will be based on my experience teaching PSYC 3000 Experimental Methods &amp; Design.</p>
+<p>The most common question when you learn a new programming language or a new software is: where the heck should I start? We will start by downloading and installing the software. Let’s jump to business!</p>
+<section id="r-installation" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="r-installation"><span class="header-section-number">2.1</span> R installation</h2>
+<p><code>R</code> is a programming language that can be downloaded from <a href="https://www.r-project.org/">HERE</a>. But, I need to explain some steps when you go there, because the webpage is not intuitive for new users.</p>
+<section id="step-1" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="step-1"><span class="header-section-number">2.1.1</span> Step 1</h3>
+<p>Please click on <code>download R</code> when you access the webpage.</p>
+<p><img src="r1.png" class="img-fluid" alt="This picture has a red arrow that points to the link to download R"></p>
 </section>
-<section id="how-to-use-this-book" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="how-to-use-this-book"><span class="header-section-number">1.2</span> How to use this book?</h2>
-<p>Each chapter is located in the left panel where you will be able to click the chapter you need to revise. All chapters will contain examples and questions that will be helpful to understand different features and options in <code>R</code>. ’</p>
-<p>I advise to check the book every week because I will update the chapters as the class progresses over the semester. I hope at some point to stop making changes, but given that this is a beta version, content might change.</p>
-<p>If you have any question, or if you’d like make recommendations please send me an email at <a href="mailto:emontenegro1@csustan.edu" class="email">emontenegro1@csustan.edu</a></p>
+<section id="step-2" class="level3" data-number="2.1.2">
+<h3 data-number="2.1.2" class="anchored" data-anchor-id="step-2"><span class="header-section-number">2.1.2</span> Step 2</h3>
+<p>You will see a list of mirrors. Please click on any mirror, you could click on the first option. If you pick another option, the download will work fine.</p>
+<p><img src="mirror.png" class="img-fluid" alt="This picture has a red circle that indicates to click on the first mirror"></p>
+</section>
+<section id="step-3" class="level3" data-number="2.1.3">
+<h3 data-number="2.1.3" class="anchored" data-anchor-id="step-3"><span class="header-section-number">2.1.3</span> Step 3</h3>
+<p>Select the option that applies to your operated system.</p>
+<p><img src="linksr.png" class="img-fluid" alt="This picture highights the operated system options, you must click on windows if you are using Windows, or macOS is you use an Apple computer"></p>
+</section>
+<section id="step-3-1" class="level3" data-number="2.1.4">
+<h3 data-number="2.1.4" class="anchored" data-anchor-id="step-3-1"><span class="header-section-number">2.1.4</span> Step 3</h3>
+<p>The following pictures show the web page when you pick Windows or Mac. When you pick macOS you will have several options, but most of the Mac users should be fine by clicking <code>R-4.2.2-arm64.pkg</code>. If you are a Windows user click on <code>base</code> to download <code>R</code>, finally!</p>
+<div id="fig-elephants" class="quarto-layout-panel">
+<figure class="figure">
+<div class="quarto-layout-row quarto-layout-valign-top">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="windows.png" class="img-fluid figure-img" alt="Picture shows the R webpage when users select Windows"></p>
+<p></p><figcaption class="figure-caption">Windows</figcaption><p></p>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="mac.png" class="img-fluid figure-img" alt="Picture shows the R webpage when users select Apple"></p>
+<p></p><figcaption class="figure-caption">Apple</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p></p><figcaption class="figure-caption">Figure&nbsp;2.1: Options to select when installing <code>R</code> in Windows or Mac.</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="rstudio-installation" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="rstudio-installation"><span class="header-section-number">2.2</span> RStudio installation</h2>
+<p><code>R</code> is the programming language, and when you work with a programming language you need an editor or easy interface to program. <code>RStudio</code>gives friendly options to program easily in <code>R</code>. You don’t need to be a computer programmer to use <code>R</code> and <code>Rstudio</code>.</p>
+<section id="step-1-1" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="step-1-1"><span class="header-section-number">2.2.1</span> Step 1</h3>
+<p><a href="https://posit.co/download/rstudio-desktop/">Click here</a> to download Rstudio. When you are there, click on <code>Download Rstudio Desktop</code>. See the next picture:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="rstudio.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Rstudio download</figcaption><p></p>
+</figure>
+</div>
+</section>
+</section>
+<section id="step-2-1" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="step-2-1"><span class="header-section-number">2.3</span> Step 2</h2>
+<p>After you download the <code>RStudio</code> installer you can install Rstudio by double clicking the installer. Follow all the prompts , the default options should be fine to start using <code>R</code> with <code>RStudio</code>.</p>
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -460,10 +512,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Preface</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Installing R</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./BasicsR.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Let’s do our first ride in <code>R</code></span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
